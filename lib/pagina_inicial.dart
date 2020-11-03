@@ -107,12 +107,12 @@ class PaginaInicial extends StatelessWidget {
               ),
               makeItem(
                   image: 'assets/salao2.jpg',
-                  tag: 'alo',
+                  tag: 'alooo',
                   nomeSalao: "Chica cabelo",
                   context: context),
               makeItem(
                   image: 'assets/salao3.jpg',
-                  tag: 'alo',
+                  tag: 'aloo',
                   nomeSalao: "Beauty Blow",
                   context: context)
             ],
@@ -126,10 +126,12 @@ class PaginaInicial extends StatelessWidget {
     return Hero(
       tag: tag,
       child: GestureDetector(
-        onTap: () {
+        onTap:
+            () {} /*{
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Saloes()));
-        },
+        }*/
+        ,
         child: Container(
           height: 250,
           width: double.infinity,

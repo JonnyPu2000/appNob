@@ -1,4 +1,4 @@
-#Wed Oct 28 16:19:12 BRT 2020
+#Tue Nov 03 16:30:00 BRT 2020
 base.0=E\:\\Biblioteca\\curso_project\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

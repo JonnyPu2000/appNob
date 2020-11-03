@@ -1,3 +1,4 @@
+import 'package:curso_project/pagina_inicial.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -121,8 +122,11 @@ class HomePage extends StatelessWidget {
                                 ),
                                 color: Colors.black54,
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => PaginaInicial()));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              PaginaInicial()));
                                 },
                                 child: Text(
                                   "Entrar",
