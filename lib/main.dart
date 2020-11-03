@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -121,11 +120,10 @@ class HomePage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(50),
                                 ),
                                 color: Colors.black54,
-                                onPressed: () {}
-                                /*Navigator.of(context).push(MaterialPageRoute(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) => PaginaInicial()));
-                                }*/
-                                ,
+                                },
                                 child: Text(
                                   "Entrar",
                                   style: TextStyle(color: Colors.white),
