@@ -2,7 +2,8 @@
 
 Projeto Nob
 
-## Getting Started
+## Créditos
+
 
 Aqui é o repositório do projeto Nob,
 Authors: João Paulo, Rudney Vieira
