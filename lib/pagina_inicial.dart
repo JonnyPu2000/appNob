@@ -14,6 +14,7 @@ class PaginaInicial extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+        centerTitle: true,
         leading: null,
         title: Text(
           "Salões",
@@ -126,12 +127,15 @@ class PaginaInicial extends StatelessWidget {
     return Hero(
       tag: tag,
       child: GestureDetector(
-        onTap:
-            () {} /*{
+        onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Saloes()));
-        }*/
-        ,
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Salao(
+                        image: image,
+                        nomeSalao: nomeSalao,
+                      )));
+        },
         child: Container(
           height: 250,
           width: double.infinity,

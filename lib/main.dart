@@ -90,6 +90,7 @@ class HomePage extends StatelessWidget {
                                       bottom:
                                           BorderSide(color: Colors.grey[200]))),
                               child: TextField(
+                                obscureText: true,
                                 decoration: InputDecoration(
                                     hintText: "Senha",
                                     hintStyle: TextStyle(color: Colors.grey),
@@ -148,17 +149,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-/*class PaginaInicial extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-
-        ),
-      ),
-    );
-  }
-}
-*/
