@@ -136,74 +136,52 @@ class PaginaInicial extends StatelessWidget {
                         nomeSalao: nomeSalao,
                       )));
         },
-        child: Container(
-          height: 250,
-          width: double.infinity,
-          padding: EdgeInsets.all(20),
-          margin: EdgeInsets.only(bottom: 40),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              image:
-                  DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey[400],
-                    blurRadius: 10,
-                    offset: Offset(0, 10))
-              ]),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Stack(
-                      children: [
-                        Text(
-                          nomeSalao,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontStyle: FontStyle.normal,
-                          ),
-                        ),
-                        Text(
-                          nomeSalao,
-                          style: TextStyle(
-                            fontSize: 30,
-                            foreground: Paint()
-                              ..style = PaintingStyle.stroke
-                              ..strokeWidth = 1
-                              ..color = Colors.black,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        )
-                      ],
-                    ),
+        child: Stack(
+          children: [
+            Container(
+              height: 250,
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.only(bottom: 40),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                      image: AssetImage(image), fit: BoxFit.cover),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey[400],
+                        blurRadius: 10,
+                        offset: Offset(0, 10))
+                  ]),
+            ),
+            Container(
+              height: 60,
+              width: double.infinity,
+              margin: EdgeInsets.only(left: 60, right: 60),
+              decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.4),
+                      blurRadius: 10,
+                      offset: Offset(0, 10),
+                    )
+                  ],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20)),
+                  color: Colors.white),
+              child: Container(
+                alignment: Alignment.center,
+                child: Text(
+                  nomeSalao,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
                   ),
-                  Container(
-                    width: 35,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.black,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        Icons.favorite_border,
-                        size: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
