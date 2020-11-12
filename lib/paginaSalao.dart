@@ -129,7 +129,7 @@ class _SalaoState extends State<Salao> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(25)),
                                 child: Center(
-                                  child: Text("Pintura"),
+                                  child: Text("Tintura"),
                                 ),
                               ),
                             ),
