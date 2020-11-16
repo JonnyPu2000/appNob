@@ -20,9 +20,9 @@ class PaginaInicial extends StatelessWidget {
           "Salões",
           textAlign: TextAlign.center,
           style: TextStyle(
-              color: Colors.black,
-              fontSize: 24.5,
-              fontFamily: "Montserrat-Regular"),
+            color: Colors.black,
+            fontSize: 24.5,
+          ),
         ),
         actions: <Widget>[
           IconButton(

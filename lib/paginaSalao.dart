@@ -20,158 +20,125 @@ class _SalaoState extends State<Salao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Icon(Icons.arrow_back_ios)),
-              ),
+      body: Stack(
+        children: [
+          Container(
+            height: 265,
+            decoration: BoxDecoration(
+              image:
+                  DecorationImage(image: AssetImage(image), fit: BoxFit.fill),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Card(
-              elevation: 2,
+          ),
+          Container(
+            height: 265,
+            color: Colors.black.withOpacity(0.56),
+            child: Container(
+              alignment: Alignment(-0.9, -0.65),
               child: Container(
-                height: 320,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(image),
-                    fit: BoxFit.cover,
-                  ),
+                child: Row(
+                  children: [
+                    Container(
+                      child: IconButton(
+                          icon: Icon(Icons.arrow_back_ios_rounded,
+                              color: Colors.white),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          }),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: Text(
+                        "Agendar Visita",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 22),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  nomeSalao,
-                  style: TextStyle(
-                    fontSize: 25,
-                    height: 1.5,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 37,
-            ),
-            //Widget que possui os serviços
-            Container(
-                height: 200,
-                margin: EdgeInsets.only(right: 30, left: 30),
-                padding: EdgeInsets.all(20),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                margin: EdgeInsets.only(top: 200),
                 decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey[400],
-                          blurRadius: 10,
-                          offset: Offset(0, 10))
-                    ]),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: SizedBox(
-                      height: 50,
-                      child: new ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          AspectRatio(
-                            aspectRatio: 22 / 10,
-                            child: Padding(
-                              padding: EdgeInsets.all(5),
-                              child: Container(
-                                margin: EdgeInsets.only(right: 7),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25)),
-                                child: Center(
-                                  child: Text("Cabelo"),
-                                ),
-                              ),
-                            ),
-                          ),
-                          AspectRatio(
-                            aspectRatio: 22 / 10,
-                            child: Padding(
-                              padding: EdgeInsets.all(5),
-                              child: Container(
-                                margin: EdgeInsets.only(right: 7),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25)),
-                                child: Center(
-                                  child: Text("Barba"),
-                                ),
-                              ),
-                            ),
-                          ),
-                          AspectRatio(
-                            aspectRatio: 22 / 10,
-                            child: Padding(
-                              padding: EdgeInsets.all(5),
-                              child: Container(
-                                margin: EdgeInsets.only(right: 7),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25)),
-                                child: Center(
-                                  child: Text("Tintura"),
-                                ),
-                              ),
-                            ),
-                          ),
-                          AspectRatio(
-                            aspectRatio: 22 / 10,
-                            child: Padding(
-                              padding: EdgeInsets.all(5),
-                              child: Container(
-                                margin: EdgeInsets.only(right: 7),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25)),
-                                child: Center(
-                                  child: Text("Noiva"),
-                                ),
-                              ),
-                            ),
-                          ),
-                          AspectRatio(
-                            aspectRatio: 22 / 10,
-                            child: Padding(
-                              padding: EdgeInsets.all(5),
-                              child: Container(
-                                margin: EdgeInsets.only(right: 7),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(25)),
-                                child: Center(
-                                  child: Text("Corte"),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                    color: Color.fromRGBO(10, 20, 30, 1),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15))),
+              ),
+              Container(
+                height: 600,
+                margin: EdgeInsets.only(top: 225, left: 33),
+                child: Text("Escolha uma data",
+                    style: TextStyle(color: Colors.white, fontSize: 18)),
+              ),
+              Container(
+                margin:
+                    EdgeInsets.only(top: 270, left: 30, right: 30, bottom: 520),
+                decoration: BoxDecoration(
+                    color: Color.fromRGBO(50, 51, 70, 1),
+                    borderRadius: BorderRadius.circular(30)),
+              ),
+              Container(
+                  margin: EdgeInsets.only(
+                      top: 270, left: 325, right: 45, bottom: 520),
+                  child: IconButton(
+                      icon: Icon(
+                        Icons.date_range_rounded,
+                        color: Colors.white,
+                        size: 35,
                       ),
-                    ))
-                  ],
-                )),
-          ],
-        ),
+                      onPressed: null)),
+              SizedBox(
+                height: 37,
+              ),
+              criarProfissional(profimage: "assets/barbeiro.jpg")
+            ],
+          ),
+        ],
       ),
     );
   }
+}
+
+Widget criarProfissional({profimage, nomeprof}) {
+  return Container(
+    height: 150,
+    margin: EdgeInsets.only(top: 350),
+    padding: EdgeInsets.all(20),
+    child: Row(
+      children: <Widget>[
+        Expanded(
+          child: SizedBox(
+            height: 100,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                AspectRatio(
+                    aspectRatio: 1 / 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Container(
+                        margin: EdgeInsets.only(right: 7),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            border: Border.all(color: Colors.yellow),
+                            image: DecorationImage(
+                                image: AssetImage(profimage),
+                                fit: BoxFit.fill)),
+                      ),
+                    )),
+              ],
+            ),
+          ),
+        )
+      ],
+    ),
+  );
 }
