@@ -8,10 +8,13 @@ import 'package:http/http.dart' as http;
 import "package:dio/dio.dart";
 
 // comentário teste
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    ));
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: LoginPage(),
+  ));
+  HttpOverrides.global = new MyHttpOverrides();
+}
 
 class LoginPage extends StatelessWidget {
   @override
@@ -117,7 +120,7 @@ class LoginPage extends StatelessWidget {
                       color: Colors.white,
                       onPressed: () async {
                         print("postando...");
-                        _makePostRequest();
+                        postRequest();
 
                         Navigator.push(
                             context,
@@ -142,17 +145,29 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-// ignore: missing_return
-Future<http.Response> _makePostRequest() async {
-  var body = '{"login" : "1", "pw": "k7f32Sa#", "json_xml" : "json"}';
-  Map<String, String> headers = {"Content-type": "application/json"};
+class MyHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
 
-  String url = "https://pdvapi.salaomaster.com.br/logarcli";
-  http.Response response = await http.post(url, headers: headers, body: body);
-
-  int statusCode = response.statusCode;
-  String bodyRes = response.body;
-
-  print(statusCode);
-  print(bodyRes);
+Future<http.Response> postRequest() async {
+  final http.Response response = await http.post(
+    'https://pdvapi.salaomaster.com.br/logarcli',
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    body: jsonEncode(
+        <String, String>{"login": "1", "pw": "k7f32Sa#", "json_xml": "json"}),
+  );
+  if (response.statusCode == 200) {
+    print(response.body);
+    return jsonDecode(response.body);
+  } else {
+    print(response.statusCode);
+    throw Exception('Erro(colocar uma mensagem aqui)');
+  }
 }
