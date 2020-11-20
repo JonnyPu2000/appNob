@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:curso_project/pagina_inicial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import "package:dio/dio.dart";
 
 // comentário teste
 void main() => runApp(MaterialApp(
@@ -9,6 +13,20 @@ void main() => runApp(MaterialApp(
     ));
 
 class LoginPage extends StatelessWidget {
+  Dio dio = new Dio();
+
+  Future _makePostRequest() async {
+    final String url = 'https://pdvapi.salaomaster.com.br/logarcli';
+
+    dynamic data = {"login": "1", "pw": "k7f32Sa#", "json_xml": "json"};
+
+    var response = await dio.post(url,
+        data: data,
+        options: Options(headers: {"Content-type": "application/json"}));
+
+    return response.data;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +128,11 @@ class LoginPage extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30)),
                       color: Colors.white,
-                      onPressed: () {
+                      onPressed: () async {
+                        print("postando...");
+                        _makePostRequest();
+                        print(_makePostRequest());
+
                         Navigator.push(
                             context,
                             MaterialPageRoute(
