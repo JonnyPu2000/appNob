@@ -2,6 +2,7 @@ import 'package:curso_project/pagina_inicial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// comentário teste
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginPage(),

@@ -24,32 +24,22 @@ class _SalaoState extends State<Salao> {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(image),
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.6), BlendMode.darken),
-                  fit: BoxFit.fitWidth)),
-          child: Column(
+          child: Stack(
             children: [
-              SizedBox(
-                height: 50,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Container(
+                height: MediaQuery.of(context).size.height / 3 + 20,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  fit: StackFit.expand,
                   children: [
-                    Container(
-                      child: IconButton(
-                          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
-                          onPressed: null),
+                    Image.asset(
+                      image,
+                      colorBlendMode: BlendMode.darken,
+                      color: Colors.black.withOpacity(0.6),
+                      fit: BoxFit.fill,
                     )
                   ],
                 ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.2,
               )
             ],
           ),
