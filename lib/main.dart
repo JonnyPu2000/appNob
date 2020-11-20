@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:curso_project/pagina_inicial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 import "package:dio/dio.dart";
 
 // comentário teste
@@ -13,20 +14,6 @@ void main() => runApp(MaterialApp(
     ));
 
 class LoginPage extends StatelessWidget {
-  Dio dio = new Dio();
-
-  Future _makePostRequest() async {
-    final String url = 'https://pdvapi.salaomaster.com.br/logarcli';
-
-    dynamic data = {"login": "1", "pw": "k7f32Sa#", "json_xml": "json"};
-
-    var response = await dio.post(url,
-        data: data,
-        options: Options(headers: {"Content-type": "application/json"}));
-
-    return response.data;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,7 +118,6 @@ class LoginPage extends StatelessWidget {
                       onPressed: () async {
                         print("postando...");
                         _makePostRequest();
-                        print(_makePostRequest());
 
                         Navigator.push(
                             context,
@@ -154,4 +140,19 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
+}
+
+// ignore: missing_return
+Future<http.Response> _makePostRequest() async {
+  var body = '{"login" : "1", "pw": "k7f32Sa#", "json_xml" : "json"}';
+  Map<String, String> headers = {"Content-type": "application/json"};
+
+  String url = "https://pdvapi.salaomaster.com.br/logarcli";
+  http.Response response = await http.post(url, headers: headers, body: body);
+
+  int statusCode = response.statusCode;
+  String bodyRes = response.body;
+
+  print(statusCode);
+  print(bodyRes);
 }
