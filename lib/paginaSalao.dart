@@ -27,7 +27,7 @@ class _SalaoState extends State<Salao> {
             children: [
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 230,
                 child: ClipRRect(
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
@@ -96,25 +96,26 @@ class _SalaoState extends State<Salao> {
                       height: 20,
                     ),
                     Container(
-                      height: 120,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(50),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 10,
-                                offset: Offset(1, 10))
-                          ]),
-                      child: ListView.builder(
-                          itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: EdgeInsets.only(bottom: 70),
-                          child: criarEspecialista(
-                              "assets/barbeiro.jpg", "Claudio"),
-                        );
-                      }),
+                      height: 180,
+                      width: 500,
+                      child: ListView(
+                        physics: BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          criarEspecialista(
+                              "assets/barbeiro.jpg", "João", "Manicure"),
+                          criarEspecialista(
+                              "assets/Salve.jpg", "Jefferson", "Corte"),
+                          criarEspecialista(
+                              "assets/barbeiro.jpg", "Anderson", "Massagem"),
+                          criarEspecialista(
+                              "assets/Salve.jpg", "Nilda", "Corte"),
+                          criarEspecialista(
+                              "assets/barbeiro.jpg", "Rubens", "Depilação"),
+                          criarEspecialista(
+                              "assets/Salve.jpg", "Kaio", "Tintura"),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -127,27 +128,23 @@ class _SalaoState extends State<Salao> {
   }
 }
 
-Widget criarEspecialista(imagemEspecialista, nomeEspecialista) {
-  return Container(
-    height: 120,
-    child: ListView(
-      scrollDirection: Axis.horizontal,
-      children: [
-        Container(
-          height: 10,
-          width: 90,
-          margin: EdgeInsets.only(left: 10, bottom: 40),
-          child: InkWell(
-              onTap: () {},
-              child: Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(imagemEspecialista),
-                        fit: BoxFit.fill),
-                    borderRadius: BorderRadius.circular(100)),
-              )),
-        ),
-      ],
-    ),
+// metodo para imagem e nome do Especialista
+Widget criarEspecialista(imagemEspecialista, nomeEspecialista, service) {
+  return Column(
+    children: [
+      Container(
+          margin: EdgeInsets.all(14),
+          height: 80,
+          width: 80,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(imagemEspecialista), fit: BoxFit.fitHeight),
+              borderRadius: BorderRadius.circular(100))),
+      Text(nomeEspecialista),
+      Text(
+        service,
+        style: TextStyle(color: Colors.grey),
+      )
+    ],
   );
 }

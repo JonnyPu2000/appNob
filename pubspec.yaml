@@ -28,6 +28,7 @@ flutter:
       - assets/salao3.jpg
       - assets/Fundo.jpg
       - assets/barbeiro.jpg
+      - assets/Salve.jpg
 
     
   uses-material-design: true
