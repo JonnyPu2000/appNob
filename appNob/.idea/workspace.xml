@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f690859-dcf9-4814-b4be-3e658ed8a5bf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RQ8M50DQ9VD]" />
+  <component name="ProjectId" id="1jSrKHcbubr6PRsh3Pn6MgcD8UT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f690859-dcf9-4814-b4be-3e658ed8a5bf" name="Default Changelist" comment="" />
+      <created>1603808268282</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603808268282</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="500" y="185" key="FileChooserDialogImpl" timestamp="1603826594148">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="500" y="185" key="FileChooserDialogImpl/-1920.-102.1920.1040/0.0.1440.860@0.0.1440.860" timestamp="1603826594148" />
+    <state width="1340" height="218" key="GridCell.Tab.0.bottom" timestamp="1603827002759">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1340" height="218" key="GridCell.Tab.0.bottom/-1920.-102.1920.1040/0.0.1440.860@0.0.1440.860" timestamp="1603827002759" />
+    <state width="1340" height="218" key="GridCell.Tab.0.center" timestamp="1603827002758">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1340" height="218" key="GridCell.Tab.0.center/-1920.-102.1920.1040/0.0.1440.860@0.0.1440.860" timestamp="1603827002758" />
+    <state width="1340" height="218" key="GridCell.Tab.0.left" timestamp="1603827002758">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1340" height="218" key="GridCell.Tab.0.left/-1920.-102.1920.1040/0.0.1440.860@0.0.1440.860" timestamp="1603827002758" />
+    <state width="1340" height="218" key="GridCell.Tab.0.right" timestamp="1603827002759">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1340" height="218" key="GridCell.Tab.0.right/-1920.-102.1920.1040/0.0.1440.860@0.0.1440.860" timestamp="1603827002759" />
+    <state x="442" y="124" key="SettingsEditor" timestamp="1603809677333">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="442" y="124" key="SettingsEditor/-1920.-102.1920.1040/0.0.1440.860@0.0.1440.860" timestamp="1603809677333" />
+  </component>
+</project>
