@@ -5,7 +5,6 @@ import 'package:curso_project/pagina_inicial.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import "package:dio/dio.dart";
 
 // comentário teste
 void main() {
@@ -156,12 +155,11 @@ class MyHttpOverrides extends HttpOverrides {
 
 Future<http.Response> postRequest() async {
   final http.Response response = await http.post(
-    'https://pdvapi.salaomaster.com.br/logarcli',
-    headers: <String, String>{
+    'http://pdvapi.salaomaster.com.br/logarcli',
+    headers: {
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(
-        <String, String>{"login": "1", "pw": "k7f32Sa#", "json_xml": "json"}),
+    body: jsonEncode({"login": "1", "pw": "k7f32Sa#", "json_xml": "json"}),
   );
   if (response.statusCode == 200) {
     print(response.body);

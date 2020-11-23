@@ -21,30 +21,133 @@ class _SalaoState extends State<Salao> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          width: double.infinity,
-          child: Stack(
+      body: Stack(
+        children: [
+          Column(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height / 3 + 20,
-                width: MediaQuery.of(context).size.width,
+                width: double.infinity,
+                height: 300,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
+                  child: Image.asset(
+                    image,
+                    height: 400,
+                    width: double.infinity,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(14),
                 child: Stack(
-                  fit: StackFit.expand,
                   children: [
-                    Image.asset(
-                      image,
-                      colorBlendMode: BlendMode.darken,
-                      color: Colors.black.withOpacity(0.6),
-                      fit: BoxFit.fill,
+                    Text(
+                      "Selecione uma data",
+                      style: TextStyle(fontSize: 18),
                     )
                   ],
                 ),
-              )
+              ),
+              Expanded(
+                  child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 60,
+                      margin: EdgeInsets.only(right: 20, left: 20),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 10,
+                                offset: Offset(1, 10))
+                          ]),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Text("25 de novembro,2020"),
+                          ),
+                          IconButton(
+                            padding: EdgeInsets.only(left: 120),
+                            alignment: Alignment.centerRight,
+                            icon: Icon(Icons.calendar_today_outlined),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      "Selecione um Especialista",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 120,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(50),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.2),
+                                blurRadius: 10,
+                                offset: Offset(1, 10))
+                          ]),
+                      child: ListView.builder(
+                          itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: EdgeInsets.only(bottom: 70),
+                          child: criarEspecialista(
+                              "assets/barbeiro.jpg", "Claudio"),
+                        );
+                      }),
+                    )
+                  ],
+                ),
+              )),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
+}
+
+Widget criarEspecialista(imagemEspecialista, nomeEspecialista) {
+  return Container(
+    height: 120,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: [
+        Container(
+          height: 10,
+          width: 90,
+          margin: EdgeInsets.only(left: 10, bottom: 40),
+          child: InkWell(
+              onTap: () {},
+              child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(imagemEspecialista),
+                        fit: BoxFit.fill),
+                    borderRadius: BorderRadius.circular(100)),
+              )),
+        ),
+      ],
+    ),
+  );
 }
