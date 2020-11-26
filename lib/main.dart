@@ -6,7 +6,6 @@ import 'package:curso_project/utils/checkLogin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import "package:dio/dio.dart";
 
 //Arquivo de conexão com a api
 import 'api/login.dart';
