@@ -1,4 +1,4 @@
-import 'package:curso_project/paginaSalao.dart';
+import 'package:curso_project/paginaSalao_Prof.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
