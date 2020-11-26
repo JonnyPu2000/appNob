@@ -2,9 +2,16 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:curso_project/pagina_inicial.dart';
+import 'package:curso_project/utils/checkLogin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import "package:dio/dio.dart";
+
+//Arquivo de conexão com a api
+import 'api/login.dart';
+import 'controllers/loginController.dart';
+import 'controllers/passwordController.dart';
 
 // comentário teste
 void main() {
@@ -60,6 +67,7 @@ class LoginPage extends StatelessWidget {
                   height: 60,
                   margin: EdgeInsets.only(left: 40, right: 40),
                   child: TextField(
+                    controller: loginController,
                     style: TextStyle(fontSize: 16, color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Código ou Login",
@@ -82,6 +90,7 @@ class LoginPage extends StatelessWidget {
                   height: 60,
                   margin: EdgeInsets.only(left: 40, right: 40),
                   child: TextField(
+                    controller: passwordController,
                     obscureText: true,
                     style: TextStyle(fontSize: 16, color: Colors.white),
                     decoration: InputDecoration(
@@ -119,12 +128,18 @@ class LoginPage extends StatelessWidget {
                       color: Colors.white,
                       onPressed: () async {
                         print("postando...");
-                        postRequest();
-
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => PaginaInicial()));
+                        print(loginController.text);
+                        print(passwordController.text);
+                        var result = await postRequest(
+                            loginController.text, passwordController.text);
+                        if (result[1] == 1) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PaginaInicial()));
+                        } else {
+                          print("oi");
+                        }
                       },
                       child: Text(
                         "Entrar",
@@ -150,22 +165,5 @@ class MyHttpOverrides extends HttpOverrides {
     return super.createHttpClient(context)
       ..badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
-  }
-}
-
-Future<http.Response> postRequest() async {
-  final http.Response response = await http.post(
-    'http://pdvapi.salaomaster.com.br/logarcli',
-    headers: {
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
-    body: jsonEncode({"login": "1", "pw": "k7f32Sa#", "json_xml": "json"}),
-  );
-  if (response.statusCode == 200) {
-    print(response.body);
-    return jsonDecode(response.body);
-  } else {
-    print(response.statusCode);
-    throw Exception('Erro(colocar uma mensagem aqui)');
   }
 }
