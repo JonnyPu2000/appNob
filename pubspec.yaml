@@ -9,15 +9,20 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  dio: 3.0.10
+  intl: any
   http: any
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_datetime_picker: ^1.2.5
 
 
   cupertino_icons: ^1.0.0
+  flutter_cupertino_date_picker: ^1.0.26+2
 
 dev_dependencies:
+
   flutter_test:
     sdk: flutter
 
@@ -28,6 +33,7 @@ flutter:
       - assets/salao3.jpg
       - assets/Fundo.jpg
       - assets/barbeiro.jpg
+      - assets/Salve.jpg
 
     
   uses-material-design: true
