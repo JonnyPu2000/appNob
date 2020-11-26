@@ -138,7 +138,7 @@ class LoginPage extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => PaginaInicial()));
                         } else {
-                          return "";
+                          print("oi");
                         }
                       },
                       child: Text(

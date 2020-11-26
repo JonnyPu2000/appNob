@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:curso_project/utils/checkLogin.dart';
+import 'package:curso_project/utils/separeteInfo.dart';
 import 'package:http/http.dart' as http;
 
 //Arquivo que gera a conexão com a api de login
@@ -16,11 +17,11 @@ postRequest(login, psd) async {
   if (response.statusCode == 200) {
     var json = response.body.toString();
     var responseSliced = checkLogin(json);
-    print(responseSliced);
+    separeteInfo(json);
 
     return responseSliced;
   } else {
     print(response.statusCode);
-    throw Exception('Erro(colocar uma mensagem aqui)');
+    throw Exception('Erro: ${response.statusCode}');
   }
 }
