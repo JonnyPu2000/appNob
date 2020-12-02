@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'Widgets/createProf.dart';
 
 // Teste
-class Salao extends StatefulWidget {
+class SalaoProf extends StatefulWidget {
   String nomeSalao;
   String image;
 
-  Salao({this.image, this.nomeSalao});
+  SalaoProf({this.image, this.nomeSalao});
 
   @override
-  _SalaoState createState() => _SalaoState(image: image, nomeSalao: nomeSalao);
+  _SalaoProfState createState() =>
+      _SalaoProfState(image: image, nomeSalao: nomeSalao);
 }
 
-class _SalaoState extends State<Salao> {
+class _SalaoProfState extends State<SalaoProf> {
   String nomeSalao;
   String image;
   String data = "Datas Disponíveis";
   String hora = "Horários Dispoínveis ";
   double size = 60;
 
-  _SalaoState({this.nomeSalao, this.image});
+  _SalaoProfState({this.nomeSalao, this.image});
 
   @override
   Widget build(BuildContext context) {
@@ -197,25 +199,4 @@ class _SalaoState extends State<Salao> {
       ),
     );
   }
-}
-
-// metodo para imagem e nome do Profissional
-Widget criarProfissional(imagemProfissional, nomeProfissional, service) {
-  return Column(
-    children: [
-      Container(
-          margin: EdgeInsets.all(14),
-          height: 80,
-          width: 80,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(imagemProfissional), fit: BoxFit.fitHeight),
-              borderRadius: BorderRadius.circular(100))),
-      Text(nomeProfissional),
-      Text(
-        service,
-        style: TextStyle(color: Colors.grey),
-      )
-    ],
-  );
 }

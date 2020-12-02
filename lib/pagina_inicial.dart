@@ -1,6 +1,7 @@
-import 'package:curso_project/paginaSalao_Prof.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Widgets/createService.dart';
+import 'Widgets/makeItem.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -101,87 +102,26 @@ class PaginaInicial extends StatelessWidget {
                 height: 20,
               ),
               makeItem(
-                image: 'assets/salao1.jpg',
-                tag: 'alo',
-                nomeSalao: "Dona Maricota",
-                context: context,
-              ),
+                  image: 'assets/salao1.jpg',
+                  endereco: "Higienopolis",
+                  tag: 'alo',
+                  nomeSalao: "Dona Maricota",
+                  context: context,
+                  telefone: "(11) 97145-3768"),
               makeItem(
                   image: 'assets/salao2.jpg',
                   tag: 'alooo',
                   nomeSalao: "Chica cabelo",
+                  telefone: "(11) 97522-6904",
                   context: context),
               makeItem(
                   image: 'assets/salao3.jpg',
+                  telefone: "(11) 97638-5947",
                   tag: 'aloo',
                   nomeSalao: "Beauty Blow",
                   context: context)
             ],
           )),
-        ),
-      ),
-    );
-  }
-
-  Widget makeItem({image, tag, nomeSalao, context}) {
-    return Hero(
-      tag: tag,
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Salao(
-                        image: image,
-                        nomeSalao: nomeSalao,
-                      )));
-        },
-        child: Stack(
-          children: [
-            Container(
-              height: 250,
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              margin: EdgeInsets.only(bottom: 40),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                      image: AssetImage(image), fit: BoxFit.cover),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.grey[400],
-                        blurRadius: 10,
-                        offset: Offset(0, 10))
-                  ]),
-            ),
-            Container(
-              height: 60,
-              width: double.infinity,
-              margin: EdgeInsets.only(left: 60, right: 60),
-              decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.4),
-                      blurRadius: 10,
-                      offset: Offset(0, 10),
-                    )
-                  ],
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20)),
-                  color: Colors.white),
-              child: Container(
-                alignment: Alignment.center,
-                child: Text(
-                  nomeSalao,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ),
-          ],
         ),
       ),
     );
