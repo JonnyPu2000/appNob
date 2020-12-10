@@ -13,7 +13,9 @@ import 'api/login.dart';
 import 'controllers/loginController.dart';
 import 'controllers/passwordController.dart';
 
-// comentário teste
+// Login: '1'
+// Senha: 'k7f32Sa#'
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"name":"D:\\projeto nob\\build\\app\\intermediates\\javac\\debug\\classes","index":0,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true},{"name":"D:\\projeto nob\\build\\app\\tmp\\kotlin-classes\\debug","index":1,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true}]
+=======
+[{"name":"E:\\Biblioteca\\App_Nob\\build\\app\\intermediates\\javac\\debug\\classes","index":0,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true},{"name":"E:\\Biblioteca\\App_Nob\\build\\app\\tmp\\kotlin-classes\\debug","index":1,"scopes":["PROJECT"],"types":["DEX_ARCHIVE"],"format":"DIRECTORY","present":true}]
+>>>>>>> 43d8ebb0784a8368c5596cd29a078ce15625cfeb

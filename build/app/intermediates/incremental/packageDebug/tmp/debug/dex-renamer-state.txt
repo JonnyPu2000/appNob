@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Thu Dec 10 15:54:08 BRT 2020
 base.0=D\:\\projeto nob\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+=======
+#Wed Dec 02 15:19:36 BRT 2020
+base.0=E\:\\Biblioteca\\App_Nob\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+>>>>>>> 43d8ebb0784a8368c5596cd29a078ce15625cfeb
 path.0=classes.dex
 renamed.0=classes.dex
