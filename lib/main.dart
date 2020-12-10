@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:curso_project/api/schedules.dart';
 import 'package:curso_project/pagina_inicial.dart';
 import 'package:curso_project/utils/checkLogin.dart';
 import 'package:flutter/cupertino.dart';
@@ -129,15 +130,30 @@ class LoginPage extends StatelessWidget {
                         print("postando...");
                         print(loginController.text);
                         print(passwordController.text);
-                        var result = await postRequest(
+                        var result = await checkLogin(
                             loginController.text, passwordController.text);
-                        if (result[1] == 1) {
+                        print(result);
+                        if (result == 1) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => PaginaInicial()));
                         } else {
-                          print("oi");
+                          return showDialog(
+                            context: context,
+                            builder: (ctx) => AlertDialog(
+                              title: Text("Aviso !"),
+                              content: Text("Login ou Senha errado(s)"),
+                              actions: <Widget>[
+                                FlatButton(
+                                  onPressed: () {
+                                    Navigator.of(ctx).pop();
+                                  },
+                                  child: Text("OK"),
+                                ),
+                              ],
+                            ),
+                          );
                         }
                       },
                       child: Text(
