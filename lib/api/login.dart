@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'package:curso_project/api/schedules.dart';
 import 'package:http/http.dart' as http;
 
 //*Import da classe de login
 import 'package:curso_project/Classes/loginInfo.dart';
 
+import 'package:curso_project/Classes/listaTokenLoja.dart';
 //Arquivo que gera a conexão com a api de login
 
 postRequest(login, psd) async {
@@ -17,8 +19,7 @@ postRequest(login, psd) async {
   if (response.statusCode == 200) {
     var json = response.body;
     LoginInfo loginInfo = LoginInfo.fromJson(jsonDecode(json));
-    var resp = loginInfo.resp;
-    return resp;
+    return loginInfo;
   } else {
     print(response.statusCode);
     throw Exception('Erro: ${response.statusCode}');

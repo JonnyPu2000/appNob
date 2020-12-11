@@ -134,12 +134,12 @@ class LoginPage extends StatelessWidget {
                         print(passwordController.text);
                         var result = await checkLogin(
                             loginController.text, passwordController.text);
-                        print(result);
-                        if (result == 1) {
+                        if (result.resp == "ok") {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => PaginaInicial()));
+                                  builder: (context) =>
+                                      PaginaInicial(result: result)));
                         } else {
                           return showDialog(
                             context: context,

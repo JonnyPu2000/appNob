@@ -5,9 +5,8 @@ import 'package:curso_project/api/login.dart';
 
 checkLogin(login, psd) async {
   var resp = await postRequest(login, psd);
-  print(resp);
-  if (resp == "ok") {
-    return 1;
+  if (resp.resp == "ok") {
+    return resp;
   } else {
     return 0;
   }

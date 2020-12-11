@@ -1,14 +1,19 @@
+import 'package:curso_project/api/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'Widgets/createService.dart';
 import 'Widgets/makeItem.dart';
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PaginaInicial(),
-    ));
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: PaginaInicial(),
+  ));
+}
 
 class PaginaInicial extends StatelessWidget {
+  final result;
+  PaginaInicial({this.result});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,16 +108,16 @@ class PaginaInicial extends StatelessWidget {
               ),
               makeItem(
                   image: 'assets/salao1.jpg',
-                  endereco: "Higienopolis",
-                  tag: 'alo',
-                  nomeSalao: "Dona Maricota",
+                  endereco: result.listaTokenLoja[0].endereco,
+                  tag: result.listaTokenLoja[0].mensagem,
+                  nomeSalao: result.listaTokenLoja[0].nomeLoja,
                   context: context,
-                  telefone: "(11) 97145-3768"),
+                  telefone: result.listaTokenLoja[0].fone),
               makeItem(
                   image: 'assets/salao2.jpg',
-                  tag: 'alooo',
-                  nomeSalao: "Chica cabelo",
-                  telefone: "(11) 97522-6904",
+                  tag: result.listaTokenLoja[1].mensagem,
+                  nomeSalao: result.listaTokenLoja[1].nomeLoja,
+                  telefone: result.listaTokenLoja[1].fone,
                   context: context),
               makeItem(
                   image: 'assets/salao3.jpg',
